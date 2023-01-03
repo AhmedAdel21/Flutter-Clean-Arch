@@ -1,5 +1,6 @@
+// OnBoarding models
+import 'package:temp/data/response/responses.dart';
 
- // OnBoarding models
 class SliderObject {
   String title;
   String subTitle;
@@ -14,4 +15,29 @@ class SliderViewObject {
   int currentIndex;
 
   SliderViewObject(this.sliderObject, this.numOfSliders, this.currentIndex);
+}
+
+// login models
+
+class Customer {
+  String id;
+  String name;
+  int numOfNotifications;
+  
+  Customer(this.id, this.name, this.numOfNotifications);
+}
+
+class Contact {
+  int phone;
+  String email;
+  String link;
+
+  Contact(this.phone, this.email, this.link);
+}
+
+class Authentication {
+  Customer customer;
+  Contact contacts;
+
+  Authentication(this.customer, this.contacts);
 }
