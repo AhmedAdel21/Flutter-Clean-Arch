@@ -46,6 +46,7 @@ class OnBoardingViewModel extends BaseViewModel
 
   @override
   void onPageChanged(int index) {
+    print("new index: $index ");
     _currentPageIndex = index;
     _postDataToView();
   }

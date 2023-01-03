@@ -1,7 +1,6 @@
-import 'dart:async';
+
 
 import 'package:flutter/material.dart';
-import 'package:temp/presentation/resources/constants_manager.dart';
 import 'package:temp/presentation/resources/routes_manager.dart';
 import 'package:temp/presentation/resources/theme_manager.dart';
 
@@ -18,27 +17,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Timer? _timer;
-
-  void _startDelay() {
-    _timer = Timer(const Duration(seconds: AppConstants.splashDelay), _goNext);
-  }
-
-  void _goNext() {
-    Navigator.pushNamed(context, Routes.onBoardingRoute);
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _startDelay();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _timer?.cancel();
-  }
 
   @override
   Widget build(BuildContext context) {
