@@ -23,7 +23,7 @@ class Customer {
   String id;
   String name;
   int numOfNotifications;
-  
+
   Customer(this.id, this.name, this.numOfNotifications);
 }
 
@@ -36,8 +36,8 @@ class Contact {
 }
 
 class Authentication {
-  Customer customer;
-  Contact contacts;
+  Customer? customer;
+  Contact? contacts;
 
   Authentication(this.customer, this.contacts);
 }
