@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp/app/di.dart';
 import 'package:temp/presentation/login/viewmodel/login_viewmodel.dart';
 import 'package:temp/presentation/resources/assets_manager.dart';
 import 'package:temp/presentation/resources/color_manager.dart';
@@ -14,7 +15,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final LoginViewModel _loginViewModel = LoginViewModel();
+  final LoginViewModel _loginViewModel = instance<LoginViewModel>();
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
