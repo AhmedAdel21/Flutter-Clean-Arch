@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:temp/presentation/forgot_password/forgot_password_view.dart';
-import 'package:temp/presentation/login/login_view.dart';
+import 'package:temp/presentation/login/view/login_view.dart';
 import 'package:temp/presentation/main/main_view.dart';
 import 'package:temp/presentation/onboarding/view/onboarding_view.dart';
 import 'package:temp/presentation/register/register_view.dart';

@@ -84,13 +84,13 @@ ThemeData getApplicationTheme() {
         // enabled border style
         enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(
-                color: ColorConstants.primary, width: AppSizeConstants.s1_5),
+                color: ColorConstants.grey, width: AppSizeConstants.s1_5),
             borderRadius:
                 BorderRadius.all(Radius.circular(AppSizeConstants.s8))),
         // focused border style
         focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(
-                color: ColorConstants.grey, width: AppSizeConstants.s1_5),
+                color: ColorConstants.primary, width: AppSizeConstants.s1_5),
             borderRadius:
                 BorderRadius.all(Radius.circular(AppSizeConstants.s8))),
         // error border style

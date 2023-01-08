@@ -1,7 +1,8 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:temp/domain/model/models.dart';
-import 'package:temp/presentation/base/baseviewmodel.dart';
+import 'package:temp/presentation/base/base_viewmodel.dart';
 import 'package:temp/presentation/resources/assets_manager.dart';
 import 'package:temp/presentation/resources/strings_manager.dart';
 
@@ -46,7 +47,9 @@ class OnBoardingViewModel extends BaseViewModel
 
   @override
   void onPageChanged(int index) {
-    print("new index: $index ");
+    if (kDebugMode) {
+      print("new index: $index ");
+    }
     _currentPageIndex = index;
     _postDataToView();
   }
