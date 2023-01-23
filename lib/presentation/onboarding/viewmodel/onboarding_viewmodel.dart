@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:temp/app/app_prefs.dart';
+import 'package:temp/app/di.dart';
 import 'package:temp/domain/model/models.dart';
 import 'package:temp/presentation/base/base_viewmodel.dart';
 import 'package:temp/presentation/resources/assets_manager.dart';
@@ -14,8 +16,10 @@ class OnBoardingViewModel extends BaseViewModel
   late final List<SliderObject> _list;
   int _currentPageIndex = 0;
   // OnBoarding ViewModel Initialization
+  final AppPreferences _appPreferences = instance<AppPreferences>();
   @override
   void start() {
+    _appPreferences.setOnBoardingScreenViewed();
     _list = _getSliderData();
     _currentPageIndex = 0;
     _postDataToView();
@@ -23,6 +27,7 @@ class OnBoardingViewModel extends BaseViewModel
 
   @override
   void dispose() {
+    super.dispose();
     _streamController.close();
   }
 

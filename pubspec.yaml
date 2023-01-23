@@ -39,6 +39,7 @@ dependencies:
   get_it: ^7.2.0
   internet_connection_checker: ^1.0.0+1
   json_serializable: ^6.5.4
+  lottie: ^2.2.0
   pretty_dio_logger: ^1.1.1
   retrofit: ^3.3.1
   shared_preferences: ^2.0.15
@@ -70,6 +71,7 @@ flutter:
     - assets/images/solid_circle_ic.svg
     - assets/images/left_arrow_ic.svg
     - assets/images/right_arrow_ic.svg
+    - assets/json/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

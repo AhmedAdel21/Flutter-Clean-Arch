@@ -1,8 +1,12 @@
 import 'dart:async';
 
+import 'package:temp/app/app_prefs.dart';
+import 'package:temp/app/di.dart';
 import 'package:temp/domain/usecase/login_usecase.dart';
 import 'package:temp/presentation/base/base_viewmodel.dart';
 import 'package:temp/presentation/common/freezed_data_classes.dart';
+import 'package:temp/presentation/common/state_renderer/state_renderer.dart';
+import 'package:temp/presentation/common/state_renderer/state_renderer_impl.dart';
 
 class LoginViewModel extends BaseViewModel
     with _LoginViewModelInputs, _LoginViewModelOutputs {
@@ -13,16 +17,23 @@ class LoginViewModel extends BaseViewModel
   final StreamController<void> _areAllInputsValidStreamController =
       StreamController<void>.broadcast();
 
-  LoginObject loginObject = LoginObject("", "");
+  final StreamController<bool> isUserLoggedInSuccessfullyStreamController =
+      StreamController<bool>();
 
+  LoginObject loginObject = LoginObject("", "");
+  final AppPreferences _appPreferences = instance<AppPreferences>();
   final LoginUseCase _loginUseCase;
 
   LoginViewModel(this._loginUseCase);
   // inputs
   @override
-  void start() {}
+  void start() {
+    inputState.add(ContentState());
+  }
+
   @override
   void dispose() {
+    super.dispose();
     _userNameStreamController.close();
     _passwordStreamController.close();
   }
@@ -51,16 +62,23 @@ class LoginViewModel extends BaseViewModel
 
   @override
   Future<void> login() async {
+    inputState.add(
+        LoadingState(stateRendererType: StateRendererType.popupLoadingState));
     (await _loginUseCase.execute(
             LoginUseCaseInput(loginObject.userName, loginObject.password)))
         .fold(
-      (left) => {
+      (left) {
         // left -> failure
-        print(left.message)
+        inputState.add(ErrorState(
+            stateRendererType: StateRendererType.popupErrorState,
+            message: left.message));
       },
-      (right) => {
+      (right) {
         // right -> data  (success)
-        print(right.customer?.name)
+        inputState.add(ContentState());
+        // navigate to home screen
+        _appPreferences.setUserLoggedIn();
+        isUserLoggedInSuccessfullyStreamController.add(true);
       },
     );
   }

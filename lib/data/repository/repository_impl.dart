@@ -23,7 +23,6 @@ class RepositoryImpl implements Repository {
         // it's connected to the internet so it's safe to call API
         final AuthenticationResponse response =
             await _remoteDataSource.login(loginRequest);
-
         if (response.status == ApiInternalStatus.success) {
           // success -- return either right, data
           return Right(response.toDomain());
