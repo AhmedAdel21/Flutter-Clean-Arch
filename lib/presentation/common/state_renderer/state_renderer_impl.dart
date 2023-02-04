@@ -37,6 +37,20 @@ class ErrorState extends FlowState {
   StateRendererType getStateRendererType() => stateRendererType;
 }
 
+/// Error state (popup, full screen)
+class SuccessState extends FlowState {
+  String message;
+
+  SuccessState([this.message = AppStrings.success]);
+
+  @override
+  String getMessage() => message;
+
+  @override
+  StateRendererType getStateRendererType() =>
+      StateRendererType.popupSuccessState;
+}
+
 /// Content state (popup, full screen)
 class ContentState extends FlowState {
   ContentState();
@@ -95,6 +109,23 @@ extension FlowStateExtension on FlowState {
                 retryAction: retryActionFunction);
           }
         }
+      case SuccessState:
+        {
+          dismissDialog(context);
+          // if (getStateRendererType() == StateRendererType.popupSuccessState) {
+          // show popup loading dialog
+          showPopup(context, getStateRendererType(), getMessage(),
+              title: AppStrings.success);
+          // show content ui of the screen
+          return contentScreenWidget;
+          // }
+          //  else {
+          //   return StateRenderer(
+          //       stateRendererType: getStateRendererType(),
+          //       message: getMessage(),
+          //       retryAction: retryActionFunction);
+          // }
+        }
       case EmptyState:
         {
           return StateRenderer(
@@ -124,13 +155,15 @@ extension FlowStateExtension on FlowState {
     }
   }
 
-  showPopup(BuildContext context, StateRendererType stateRendererType,
-      String message) {
+  showPopup(
+      BuildContext context, StateRendererType stateRendererType, String message,
+      {String title = Constants.empty}) {
     WidgetsBinding.instance.addPostFrameCallback((_) => showDialog(
           context: context,
           builder: (BuildContext context) => StateRenderer(
               stateRendererType: stateRendererType,
               message: message,
+              title: title,
               retryAction: () {}),
         ));
   }

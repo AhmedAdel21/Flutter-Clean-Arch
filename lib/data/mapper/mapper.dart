@@ -26,3 +26,10 @@ extension AuthenticationResponseMapper on AuthenticationResponse? {
     return Authentication(this?.customer.toDomain(), this?.contacts.toDomain());
   }
 }
+
+extension ForgetPasswordSupportMessageResponseMapper
+    on ForgetPasswordSupportMessageResponse {
+  ForgetPasswordSupportMessage toDomain() {
+    return ForgetPasswordSupportMessage(supportMessage.orEmpty());
+  }
+}

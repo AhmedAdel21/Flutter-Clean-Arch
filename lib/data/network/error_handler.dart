@@ -51,8 +51,7 @@ enum DataSource {
   receiveTimeOut,
   sendTimeOut,
   cacheError,
-  noInternetConnection,
-  ;
+  noInternetConnection;
 
   Failure getFailure() {
     switch (this) {

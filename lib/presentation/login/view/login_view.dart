@@ -46,14 +46,16 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: ColorConstants.white,
-        body: StreamBuilder(
-            stream: _loginViewModel.outputState,
-            builder: (context, snapshot) {
-              return snapshot.data?.getScreenWidget(
-                      context, _getContentWidget(), _loginViewModel.login) ??
-                  _getContentWidget();
-            }));
+      backgroundColor: ColorConstants.white,
+      body: StreamBuilder<FlowState>(
+        stream: _loginViewModel.outputState,
+        builder: (context, snapshot) {
+          return snapshot.data?.getScreenWidget(
+                  context, _getContentWidget(), _loginViewModel.login) ??
+              _getContentWidget();
+        },
+      ),
+    );
   }
 
   Widget _getContentWidget() {

@@ -1,5 +1,4 @@
 // OnBoarding models
-import 'package:temp/data/response/responses.dart';
 
 class SliderObject {
   String title;
@@ -40,4 +39,10 @@ class Authentication {
   Contact? contacts;
 
   Authentication(this.customer, this.contacts);
+}
+
+class ForgetPasswordSupportMessage {
+  String supportMessage;
+
+  ForgetPasswordSupportMessage(this.supportMessage);
 }
