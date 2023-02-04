@@ -7,6 +7,7 @@ abstract class RemoteDataSource {
   Future<ForgetPasswordSupportMessageResponse> forgetPassword(
       ForgetPasswordRequest forgetPasswordRequest);
   Future<AuthenticationResponse> register(RegisterRequest registerRequest);
+  Future<HomeResponse> getHomeData();
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -35,5 +36,10 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   Future<ForgetPasswordSupportMessageResponse> forgetPassword(
       ForgetPasswordRequest forgetPasswordRequest) async {
     return await _appServiceClient.forgetPassword(forgetPasswordRequest.email);
+  }
+
+  @override
+  Future<HomeResponse> getHomeData() async {
+    return await _appServiceClient.getHomeData();
   }
 }
