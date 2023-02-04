@@ -50,4 +50,7 @@ class AppStrings {
   static const photoGallery = "Photo from galley";
 
   static const didNotReceiveEmail = "Didn't receive an email ? Resend." ;
+
+  static const services = "Services";
+  static const stores = "Stores";
 }

@@ -4,11 +4,11 @@ import 'package:temp/domain/model/models.dart';
 import 'package:temp/domain/repository/repository.dart';
 import 'package:temp/domain/usecase/base_usecase.dart';
 
-class HomeDataUseCase implements BaseUseCase<void, HomeObject> {
+class HomeUseCase implements BaseUseCase<void, HomeObject> {
   final Repository _repository;
-  HomeDataUseCase(this._repository);
+  HomeUseCase(this._repository);
   @override
-  Future<Either<Failure, HomeObject>> execute(_) async {
+  Future<Either<Failure, HomeObject>> execute(void input) async {
     return await _repository.getHomeData();
   }
 }
