@@ -34,23 +34,19 @@ class AppStrings {
   static const invalidEmail = "Email format is wrong";
   static const mobileNumberInvalid = "Mobile should be at least 10 digits";
   static const passwordInvalid = "Password should be at least 6 chars";
-
   static const emailHint = "Email";
-
   static const resetPassword = "Reset Password";
-
-
   static const register = "Register";
-
   static const alreadyHaveAccount = "Already have an account";
-
   static const photoCamera = "From Camera";
   static const mobileNumber = "Mobile Number";
   static const profilePicture = "Profile picture";
   static const photoGallery = "Photo from galley";
-
-  static const didNotReceiveEmail = "Didn't receive an email ? Resend." ;
-
+  static const didNotReceiveEmail = "Didn't receive an email ? Resend.";
   static const services = "Services";
   static const stores = "Stores";
+  static const changeLanguage = "Change language";
+  static const contactUs = "Contact Us";
+  static const inviteYourFriends = "Invite Your Friends";
+  static const logout = "Logout";
 }

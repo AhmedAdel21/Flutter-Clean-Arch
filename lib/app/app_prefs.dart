@@ -42,4 +42,8 @@ class AppPreferences {
     return _sharedPreferences.getBool(SharedPreferencesKeys.isUserLoggedIn) ??
         false;
   }
+
+  Future<void> logOut() async {
+    await _sharedPreferences.remove(SharedPreferencesKeys.isUserLoggedIn);
+  }
 }

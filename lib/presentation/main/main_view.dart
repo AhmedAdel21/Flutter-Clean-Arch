@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:temp/presentation/main/pages/home/view/home_page.dart';
 import 'package:temp/presentation/main/pages/notifications/notification_page.dart';
 import 'package:temp/presentation/main/pages/search/search_page.dart';
-import 'package:temp/presentation/main/pages/settings/settings_page.dart';
+import 'package:temp/presentation/main/pages/settings/view/settings_page.dart';
 import 'package:temp/presentation/resources/color_manager.dart';
 import 'package:temp/presentation/resources/strings_manager.dart';
 import 'package:temp/presentation/resources/values_manager.dart';
