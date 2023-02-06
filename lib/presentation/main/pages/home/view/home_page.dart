@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
     if (banners != null) {
       return CarouselSlider(
         options: CarouselOptions(
-          height: AppSizeConstants.s90,
+          height: AppSizeConstants.s190,
           autoPlay: true,
           enableInfiniteScroll: true,
           enlargeCenterPage: true,
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
         padding:
             const EdgeInsets.symmetric(horizontal: AppPaddingConstants.p12),
         child: Container(
-          height: AppSizeConstants.s140,
+          height: AppSizeConstants.s160,
           margin: const EdgeInsets.symmetric(vertical: AppMarginConstants.m12),
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -147,8 +147,9 @@ class _HomePageState extends State<HomePage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(AppSizeConstants.s12),
                   side: const BorderSide(
-                      color: ColorConstants.primary,
-                      width: AppSizeConstants.s1),
+                    color: ColorConstants.white,
+                    width: AppSizeConstants.s1,
+                  ),
                 ),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -159,8 +160,8 @@ class _HomePageState extends State<HomePage> {
                         child: Image.network(
                           service.image,
                           fit: BoxFit.cover,
-                          width: AppSizeConstants.s100,
-                          height: AppSizeConstants.s100,
+                          width: AppSizeConstants.s120,
+                          height: AppSizeConstants.s120,
                         ),
                       ),
                       Padding(
@@ -171,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                             child: Text(
                               service.title,
                               textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.caption,
+                              style: Theme.of(context).textTheme.bodyMedium,
                             )),
                       ),
                     ]),

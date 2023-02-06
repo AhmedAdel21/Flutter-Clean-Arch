@@ -72,7 +72,7 @@ ThemeData getApplicationTheme() {
       bodySmall: getRegularStyle(color: ColorConstants.grey),
       labelSmall: getBoldStyle(
           color: ColorConstants.primary, fontSize: FontSizeConstants.s12),
-      caption: getRegularStyle(
+      bodyMedium: getRegularStyle(
           color: ColorConstants.grey2, fontSize: FontSizeConstants.s12),
     ),
 
