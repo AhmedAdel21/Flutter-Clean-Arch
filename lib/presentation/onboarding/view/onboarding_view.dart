@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -78,7 +79,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   AppStrings.skip,
                   textAlign: TextAlign.end,
                   style: Theme.of(context).textTheme.titleMedium,
-                ),
+                ).tr(),
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, Routes.loginRoute);
                 },
@@ -174,11 +175,11 @@ class OnBoardingPage extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(AppPaddingConstants.p8),
-          child: Text(
+          child: Text( 
             _sliderObject.title,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.displayLarge,
-          ),
+          ).tr(),
         ),
         Padding(
           padding: const EdgeInsets.all(AppPaddingConstants.p8),
@@ -186,7 +187,7 @@ class OnBoardingPage extends StatelessWidget {
             _sliderObject.subTitle,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.displayLarge,
-          ),
+          ).tr(),
         ),
         const SizedBox(
           height: AppSizeConstants.s60,

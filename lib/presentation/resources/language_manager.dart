@@ -1,3 +1,7 @@
+import 'package:flutter/cupertino.dart';
+
+const String assetsPathLocalization = "assets/translations";
+
 enum LanguageType {
   defaultLanguage,
   english,
@@ -18,4 +22,9 @@ enum LanguageType {
 class LanguageConstant {
   static const arabic = "ar";
   static const english = "en";
+}
+
+class LanguageLocaleConstant {
+  static const arabicLocale = Locale("ar", "SA");
+  static const englishLocale = Locale("en", "US");
 }

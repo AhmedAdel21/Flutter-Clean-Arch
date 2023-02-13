@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:temp/presentation/resources/assets_manager.dart';
@@ -135,7 +136,7 @@ class StateRenderer extends StatelessWidget {
                 Navigator.of(context).pop();
               }
             },
-            child: Text(buttonTitle),
+            child: Text(buttonTitle).tr(),
           ),
         ),
       ),
@@ -153,7 +154,7 @@ class StateRenderer extends StatelessWidget {
             color: ColorConstants.black,
           ),
           textAlign: TextAlign.center,
-        ),
+        ).tr(),
       ),
     );
   }

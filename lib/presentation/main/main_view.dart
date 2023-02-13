@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/presentation/main/pages/home/view/home_page.dart';
 import 'package:temp/presentation/main/pages/notifications/notification_page.dart';
@@ -24,7 +25,7 @@ class _MainViewState extends State<MainView> {
   final List<String> titles = const [
     AppStrings.home,
     AppStrings.search,
-    AppStrings.notification,
+    AppStrings.notifications,
     AppStrings.settings,
   ];
   String title = AppStrings.home;
@@ -40,29 +41,30 @@ class _MainViewState extends State<MainView> {
         title: Text(
           title,
           style: Theme.of(context).textTheme.titleSmall,
-        ),
+        ).tr(),
       ),
       body: pages[_currentIndex],
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(boxShadow: [
           BoxShadow(
-              color: ColorConstants.lightGrey, spreadRadius: AppSizeConstants.s1)
+              color: ColorConstants.lightGrey,
+              spreadRadius: AppSizeConstants.s1)
         ]),
         child: BottomNavigationBar(
           selectedItemColor: ColorConstants.primary,
           unselectedItemColor: ColorConstants.grey,
           currentIndex: _currentIndex,
           onTap: _onTap,
-          items: const [
+          items:  [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home), label: AppStrings.home),
+                icon:const Icon(Icons.home), label: AppStrings.home.tr()),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search), label: AppStrings.search),
+                icon: const Icon(Icons.search), label: AppStrings.search.tr()),
             BottomNavigationBarItem(
-                icon: Icon(Icons.notifications),
-                label: AppStrings.notification),
+                icon:const Icon(Icons.notifications),
+                label: AppStrings.notifications.tr()),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: AppStrings.settings),
+                icon:const Icon(Icons.settings), label: AppStrings.settings.tr()),
           ],
         ),
       ),

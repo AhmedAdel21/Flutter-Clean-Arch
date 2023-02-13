@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:temp/app/app_prefs.dart';
 import 'package:temp/app/di.dart';
 import 'package:temp/app/functions.dart';
@@ -74,14 +75,14 @@ class RegisterViewModel extends BaseViewModel
       .map((userName) => _isUserNameValid(userName));
   @override
   Stream<String?> get outputErrorUserName => outputIsUserNameValid
-      .map((isUsername) => isUsername ? null : AppStrings.userNameInvalid);
+      .map((isUsername) => isUsername ? null : AppStrings.userNameInvalid.tr());
 
   @override
   Stream<bool> get outputIsEmailValid =>
       emailStreamController.stream.map((email) => isEmailValid(email));
   @override
   Stream<String?> get outputErrorEmail => outputIsEmailValid
-      .map((isEmailValid) => isEmailValid ? null : AppStrings.invalidEmail);
+      .map((isEmailValid) => isEmailValid ? null : AppStrings.invalidEmail.tr());
 
   @override
   Stream<bool> get outputIsMobileNumberValid => mobileStreamController.stream
@@ -89,14 +90,14 @@ class RegisterViewModel extends BaseViewModel
   @override
   Stream<String?> get outputErrorMobileNumber =>
       outputIsMobileNumberValid.map((isMobileNumberValid) =>
-          isMobileNumberValid ? null : AppStrings.mobileNumberInvalid);
+          isMobileNumberValid ? null : AppStrings.mobileNumberInvalid.tr());
 
   @override
   Stream<bool> get outputIsPasswordValid => passwordStreamController.stream
       .map((password) => _isPasswordValid(password));
   @override
   Stream<String?> get outputErrorPassword => outputIsPasswordValid.map(
-      (isPasswordValid) => isPasswordValid ? null : AppStrings.passwordInvalid);
+      (isPasswordValid) => isPasswordValid ? null : AppStrings.passwordInvalid.tr());
 
   @override
   Stream<File> get outputProfilePicture =>

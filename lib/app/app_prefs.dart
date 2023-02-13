@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:temp/presentation/resources/language_manager.dart';
 
@@ -18,6 +19,27 @@ class AppPreferences {
       return language;
     } else {
       return LanguageType.defaultLanguage.getValue;
+    }
+  }
+
+  Future<void> changeAppLanguage() async {
+    if (getAppLanguage() == LanguageType.arabic.getValue) {
+      // set english
+      _sharedPreferences.setString(
+          SharedPreferencesKeys.appLanguage, LanguageType.english.getValue);
+    } else {
+      // set arabic
+      _sharedPreferences.setString(
+          SharedPreferencesKeys.appLanguage, LanguageType.arabic.getValue);
+    }
+  }
+
+  Future<Locale> getLocaleLanguage() async {
+    String currentLan = getAppLanguage();
+    if (currentLan == LanguageType.arabic.getValue) {
+      return LanguageLocaleConstant.arabicLocale;
+    } else {
+      return LanguageLocaleConstant.englishLocale;
     }
   }
 

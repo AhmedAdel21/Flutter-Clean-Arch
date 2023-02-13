@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/app/di.dart';
 import 'package:temp/domain/model/models.dart';
@@ -74,7 +75,7 @@ class _HomePageState extends State<HomePage> {
       child: Text(
         title,
         style: Theme.of(context).textTheme.labelSmall,
-      ),
+      ).tr(),
     );
   }
 
@@ -168,12 +169,13 @@ class _HomePageState extends State<HomePage> {
                         padding:
                             const EdgeInsets.only(top: AppPaddingConstants.p2),
                         child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              service.title,
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.bodyMedium,
-                            )),
+                          alignment: Alignment.center,
+                          child: Text(
+                            service.title,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ).tr(),
+                        ),
                       ),
                     ]),
               );
